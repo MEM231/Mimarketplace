@@ -1,0 +1,29 @@
+url
+
+http://localhost/api-rest-composer_v2/public/?route=auth
+
+login
+/////////////////////
+
+{
+    "accion": "login",
+    "correo": "juan.perez@example.com",
+    "contrasena": "123456"
+}
+
+
+register
+//////////////////////
+
+{
+    "accion": "registro",
+    "nombre": "Juan Pérez",
+    "correo": "juan.perez@example.com",
+    "contrasena": "123456",
+    "tipo": "vendedor"
+}
+
+/////////////////////////
+para probar 
+login viualmente esta es la url
+(http://localhost:3000/frontend/login.html)
