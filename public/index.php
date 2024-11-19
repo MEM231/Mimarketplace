@@ -4,10 +4,10 @@ use App\config\responseHTTP;
 
 
 
-header('Access-Control-Allow-Origin: http://localhost:3000'); // Permite solicitudes desde tu frontend
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS'); // Métodos permitidos
-header('Access-Control-Allow-Headers: Content-Type, Authorization'); // Encabezados permitidos
-header("Access-Control-Expose-Headers: Authorization");
+header('Access-Control-Allow-Origin: *'); // Permite cualquier origen
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
+header('Access-Control-Expose-Headers: Authorization');
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
