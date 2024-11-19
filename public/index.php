@@ -2,12 +2,31 @@
 use App\config\errorlogs;
 use App\config\responseHTTP;
 
+$allowedOrigins = [
+    'http://localhost',
+    'https://localhost',
+    'http://127.0.0.1',
+    'https://127.0.0.1'
+];
+
+// Verificar si el origen de la solicitud está permitido
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowedOrigins)) {
+    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+    header('Access-Control-Allow-Credentials: true'); // Si necesitas credenciales
+} else {
+    http_response_code(403); // Prohibido
+    exit('CORS error: Origin not allowed.');
+}
+
+// Manejo de solicitudes OPTIONS (preflight)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    http_response_code(200);
+    exit;
+}
 
 
-header('Access-Control-Allow-Origin: *'); // Permite cualquier origen
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
-header('Access-Control-Expose-Headers: Authorization');
 
 require dirname(__DIR__).'/vendor/autoload.php';
 

@@ -1,4 +1,3 @@
-// login.js
 document.getElementById('login-form').addEventListener('submit', function(e) {
     e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
 
@@ -16,7 +15,9 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     fetch('http://localhost/api-rest-composer_V2/public/?route=auth', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            // Puedes añadir la cabecera Authorization si es necesario
+            // 'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify(data)
     })
