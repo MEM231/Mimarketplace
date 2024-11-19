@@ -5,33 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuarios</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .image-section {
+            flex: 1;
+            background: url('img/E.jpeg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        #register-form {
+            margin-bottom: 20px;
+        }
+
+        #responseMessage {
+            margin-top: 10px;
+        }
+
+        p {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        p a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Registro de Usuarios</h1>
-        <form id="register-form" autocomplete="off">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="correo">Correo:</label>
-                <input type="email" id="correo" name="correo" required>
-            </div>
-            <div class="form-group">
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena" required>
-            </div>
-            <div class="form-group">
-                <label for="tipo">Tipo de Usuario:</label>
-                <select id="tipo" name="tipo" required>
-                    <option value="vendedor">Vendedor</option>
-                    <option value="comprador">Comprador</option>
-                </select>
-            </div>
-            <button type="submit">Registrar</button>
-        </form>
-        <div id="responseMessage" class="response-message"></div>
+        <!-- Sección para la imagen -->
+        <div class="image-section"></div>
+
+        <!-- Sección para el formulario -->
+        <div class="form-section">
+            <h1>Registro de Usuarios</h1>
+            <form id="register-form" autocomplete="off">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de Usuario:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="vendedor">Vendedor</option>
+                        <option value="comprador">Comprador</option>
+                    </select>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+            <div id="responseMessage" class="response-message"></div>
+
+            <!-- Enlace al login -->
+            <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+        </div>
     </div>
     <script src="js/register.js"></script>
 </body>
